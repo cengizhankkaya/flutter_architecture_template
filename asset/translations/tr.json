@@ -1,0 +1,15 @@
+{
+    "hello": {
+        "title": "Ana Sayfa"
+    },
+    "general": {
+        "button": {
+            "save": "Kaydet {}"
+           
+        },
+        "dialog": {
+            "title": "Diyalog Başlığı",
+            "content": "Diyalog Mesajı"
+        }
+    }
+}
