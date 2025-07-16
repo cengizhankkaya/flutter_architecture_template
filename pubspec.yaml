@@ -24,6 +24,9 @@ dependencies:
   json_annotation: ^4.9.0
   envied: ^1.1.1
   easy_localization: ^3.0.7+1
+
+  #Utility
+  logger: ^2.6.0
   
 
   
