@@ -1,4 +1,3 @@
-import 'package:architecture_template/product/init/application_initialize.dart';
 import 'package:architecture_template/product/init/config/app_enviroment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/init/product_loacalization.dart';
@@ -31,9 +30,13 @@ class _HomeViewState extends State<HomeView> {
                 value: Locales.en,
               );
             },
-            child: Text(LocaleKeys.general_button_save).tr(
-              args: ['English'],
-            ),
+            child:
+                Text(
+                  LocaleKeys.general_button_save,
+                  style: Theme.of(context).textTheme.labelLarge,
+                ).tr(
+                  args: ['English'],
+                ),
           ),
         ],
       ),
