@@ -1,31 +1,30 @@
-import 'package:architecture_template/product/init/config/app_configuration_interface.dart';
-import 'package:architecture_template/product/init/config/dev_env.dart';
-import 'package:architecture_template/product/init/config/prod_env.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gen/gen.dart';
 
-///Application environment manager class
+/// Application environment manager class
 final class AppEnvironment {
-  ///Setup application environment with configuration
+  /// Setup application environment
   AppEnvironment.setup({required AppConfiguration config}) {
     _config = config;
   }
 
-  ///General application environment
+  /// General application environment setup
   AppEnvironment.general() {
     _config = !kDebugMode ? DevEnv() : ProdEnv();
   }
 
-  static late AppConfiguration _config;
+  static late final AppConfiguration _config;
 }
 
 /// Get application environment items
 enum AppEnvironmentItems {
-  ///Network base url
+  /// Network base url
   baseUrl,
 
-  ///Google Maps API key
+  /// Google maps api key
   apiKey;
 
+  /// Get application environment item value
   String get value {
     try {
       switch (this) {
@@ -35,7 +34,7 @@ enum AppEnvironmentItems {
           return AppEnvironment._config.apiKey;
       }
     } catch (e) {
-      throw Exception('AppEnvironment not initialized.');
+      throw Exception('AppEnvironment is not initialized.');
     }
   }
 }

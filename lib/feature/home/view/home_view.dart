@@ -4,6 +4,7 @@ import 'package:architecture_template/product/init/product_loacalization.dart';
 import 'package:architecture_template/product/utility/constans/enums/locales.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gen/gen.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -19,6 +20,9 @@ class _HomeViewState extends State<HomeView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Assets.lottie.animZombie.lottie(
+            package: 'gen',
+          ),
           ElevatedButton(
             onPressed: () {},
             child: Text(AppEnvironmentItems.baseUrl.value),

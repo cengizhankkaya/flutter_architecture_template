@@ -19,7 +19,8 @@ class _MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: CustomLightTheme().themeData,
-      darkTheme: CustomDarkTheme().themeData,
+      darkTheme: CustomDarkTheme().themeData,   
+      
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
