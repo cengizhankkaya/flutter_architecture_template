@@ -11,7 +11,7 @@ Future<void> main() async {
 }
 
 class _MyApp extends StatelessWidget {
-  const _MyApp({});
+  const _MyApp();
 
   // This widget is the root of your application.
   @override

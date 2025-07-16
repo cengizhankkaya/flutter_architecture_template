@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:architecture_template/product/init/config/app_enviroment.dart';
+import 'package:architecture_template/product/init/config/dev_env.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_logger/easy_logger.dart';
@@ -11,6 +13,7 @@ import 'package:logger/web.dart';
 /// This class is responsible for initializing the application.
 final class ApplicationInitialize {
   Future<void> make() async {
+    WidgetsFlutterBinding.ensureInitialized();
     await runZonedGuarded<Future<void>>(
       _initialize,
       (error, stackTrace) {
@@ -41,7 +44,6 @@ final class ApplicationInitialize {
       Logger().e(errorDetails.exceptionAsString());
     };
 
-    ///  Dependency Initialize
-    /// envied
+    AppEnvironment.general();
   }
 }
