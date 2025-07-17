@@ -40,12 +40,11 @@ dependencies:
   
 
   
-
-
   gen:
     path: module/gen
-
-
+    
+  common:
+    path: module/common
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +52,8 @@ dev_dependencies:
 
   very_good_analysis: ^9.0.0
   flutter_launcher_icons: ^0.14.4
+  auto_route_generator: ^10.2.3
+  build_runner: ^2.5.4
 
   
 
