@@ -21,6 +21,11 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          SuccessDialog.show(title: 'title', context: context);
+        },
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
