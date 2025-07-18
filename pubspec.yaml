@@ -38,7 +38,8 @@ dependencies:
   #Navigation
   auto_route: ^10.1.0+1
   
-
+  widgets:
+    path: module/widgets
   
   gen:
     path: module/gen

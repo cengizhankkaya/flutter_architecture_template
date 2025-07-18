@@ -1,10 +1,10 @@
-import 'package:architecture_template/feature/home/view/home_view.dart';
 import 'package:architecture_template/product/init/application_initialize.dart';
 import 'package:architecture_template/product/init/product_loacalization.dart';
 import 'package:architecture_template/product/init/theme/index.dart';
 import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets/indext.dart';
 
 Future<void> main() async {
   await ApplicationInitialize().make();
@@ -21,6 +21,7 @@ class _MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _appRouter.config(),
+      builder: CustomResponsive.build,
       theme: CustomLightTheme().themeData,
       darkTheme: CustomDarkTheme().themeData,
       localizationsDelegates: context.localizationDelegates,

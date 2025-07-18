@@ -1,14 +1,13 @@
 import 'package:architecture_template/product/init/config/app_enviroment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
-import 'package:architecture_template/product/init/product_loacalization.dart';
 import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
-import 'package:architecture_template/product/utility/constans/enums/locales.dart';
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/comman.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gen/gen.dart';
+import 'package:kartal/kartal.dart';
+import 'package:widgets/indext.dart';
 
 @RoutePage()
 final class HomeView extends StatefulWidget {
@@ -25,11 +24,52 @@ class _HomeViewState extends State<HomeView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CustomNetworkImage(
+          AdaptAllView(
+            phone: Text(''.ext.version),
+            tablet: Text(''.ext.version),
+            desktop: Text(''.ext.version),
+          ),
+          Image.network(''.ext.randomImage),
+          FloatingActionButton(
+            onPressed: () {
+              'Kartal'.ext.launchMaps();
+
+              final dummyUsers = List<User?>.generate(
+                100,
+                (index) => User(
+                  name: 'User $index',
+                  money: index.toDouble() * 1000,
+                ),
+              );
+
+              dummyUsers
+                  .where((element) {
+                    if (element?.money == null) return false;
+                    return element!.money! > 500;
+                  })
+                  .exts
+                  .makeSafeCustom(
+                    (value) => value?.name.ext.isNotNullOrNoEmpty ?? false,
+                  );
+            },
+          ),
+          Text(
+            'cengizhan',
+            style: context.general.textTheme.titleLarge?.copyWith(
+              color: Colors.red,
+            ),
+          ),
+          Text(''.ext.version),
+          // SizedBox(
+          //   height: context.sized.dynamicHeight(0.001),
+          // ),
+          CustomNetworkImage(
             imageUrl: 'https://picsum.photos/200/300',
-            size: Size(200, 300),
+            size: Size(100, 100),
           ),
           Assets.lottie.animZombie.lottie(
+            width: 200,
+            height: 200,
             package: 'gen',
           ),
           ElevatedButton(
@@ -52,4 +92,13 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
+}
+
+void calcuateUser(List<String?> items) {}
+
+class User {
+  User({required this.name, required this.money});
+
+  final String? name;
+  final double? money;
 }
