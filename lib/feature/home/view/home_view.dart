@@ -1,6 +1,7 @@
 import 'package:architecture_template/product/init/config/app_enviroment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
+import 'package:architecture_template/product/widget/padding/project_padding.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/comman.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -29,10 +30,13 @@ class _HomeViewState extends State<HomeView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AdaptAllView(
-            phone: Text(''.ext.version),
-            tablet: Text(''.ext.version),
-            desktop: Text(''.ext.version),
+          Padding(
+            padding: ProjectPadding.allNormal(),
+            child: AdaptAllView(
+              phone: Text(''.ext.version),
+              tablet: Text(''.ext.version),
+              desktop: Text(''.ext.version),
+            ),
           ),
           Image.network(''.ext.randomImage),
           FloatingActionButton(
