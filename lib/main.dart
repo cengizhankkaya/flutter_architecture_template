@@ -4,7 +4,7 @@ import 'package:architecture_template/product/init/theme/index.dart';
 import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:widgets/indext.dart';
+import 'package:widgets/index.dart';
 
 Future<void> main() async {
   await ApplicationInitialize().make();

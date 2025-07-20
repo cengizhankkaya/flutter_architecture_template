@@ -1,8 +1,6 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:architecture_template/product/widget/button/normal_button.dart';
 import 'package:flutter/material.dart';
-import 'package:widgets/indext.dart';
+import 'package:widgets/index.dart';
 
 class DialogNormalButton extends StatelessWidget {
   const DialogNormalButton({super.key, required this.onComplate});

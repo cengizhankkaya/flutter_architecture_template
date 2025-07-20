@@ -6,9 +6,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:common/comman.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
-import 'package:widgets/indext.dart';
+import 'package:widgets/index.dart';
 
 @RoutePage()
 final class HomeView extends StatefulWidget {
@@ -42,7 +41,6 @@ class _HomeViewState extends State<HomeView> {
           FloatingActionButton(
             onPressed: () {
               'Kartal'.ext.launchMaps();
-
               final dummyUsers = List<User?>.generate(
                 100,
                 (index) => User(
@@ -50,7 +48,6 @@ class _HomeViewState extends State<HomeView> {
                   money: index.toDouble() * 1000,
                 ),
               );
-
               dummyUsers
                   .where((element) {
                     if (element?.money == null) return false;
@@ -69,17 +66,9 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Text(''.ext.version),
-          // SizedBox(
-          //   height: context.sized.dynamicHeight(0.001),
-          // ),
-          CustomNetworkImage(
+          const CustomNetworkImage(
             imageUrl: 'https://picsum.photos/200/300',
             size: Size(100, 100),
-          ),
-          Assets.lottie.animZombie.lottie(
-            width: 200,
-            height: 200,
-            package: 'gen',
           ),
           ElevatedButton(
             onPressed: () {},

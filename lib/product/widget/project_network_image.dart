@@ -1,6 +1,7 @@
 import 'package:common/comman.dart';
 import 'package:flutter/material.dart';
 import 'package:gen/gen.dart';
+import 'package:gen/src/asset/assets.gen.dart';
 
 /// Network image with [Lottie] Loading
 final class ProjectNetworkImage extends StatelessWidget {

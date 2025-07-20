@@ -1,7 +1,7 @@
 import 'package:architecture_template/product/widget/button/normal_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:widgets/indext.dart';
+import 'package:widgets/index.dart';
 part 'custom_login_button_mixin.dart';
 
 class CustomLoginButton extends StatefulWidget {

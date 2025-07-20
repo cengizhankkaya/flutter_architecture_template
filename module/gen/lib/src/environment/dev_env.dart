@@ -3,7 +3,7 @@ import 'package:gen/src/environment/app_configuration.dart';
 
 part 'dev_env.g.dart';
 
-@Envied(path: 'lib/src/assets/env/.dev.env', obfuscate: true)
+@Envied(path: 'assets/env/.dev.env', obfuscate: true)
 final class DevEnv implements AppConfiguration {
   @EnviedField(varName: 'BASE_URL')
   static final String _baseUrl = _DevEnv._baseUrl;
