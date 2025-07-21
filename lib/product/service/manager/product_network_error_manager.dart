@@ -1,7 +1,4 @@
 import 'dart:io';
-
-import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 final class ProductNetworkErrorManager {

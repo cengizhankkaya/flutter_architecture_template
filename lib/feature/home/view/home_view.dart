@@ -1,11 +1,14 @@
 import 'package:architecture_template/product/init/config/app_enviroment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/navigation/deeplink/app_router.dart';
+import 'package:architecture_template/product/service/login_service.dart';
+import 'package:architecture_template/product/service/manager/product_service_manager.dart';
 import 'package:architecture_template/product/widget/padding/project_padding.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/comman.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 import 'package:widgets/index.dart';
 
@@ -18,6 +21,7 @@ final class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List<User> _users = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,25 +43,23 @@ class _HomeViewState extends State<HomeView> {
           ),
           Image.network(''.ext.randomImage),
           FloatingActionButton(
-            onPressed: () {
-              'Kartal'.ext.launchMaps();
-              final dummyUsers = List<User?>.generate(
-                100,
-                (index) => User(
-                  name: 'User $index',
-                  money: index.toDouble() * 1000,
-                ),
-              );
-              dummyUsers
-                  .where((element) {
-                    if (element?.money == null) return false;
-                    return element!.money! > 500;
-                  })
-                  .exts
-                  .makeSafeCustom(
-                    (value) => value?.name.ext.isNotNullOrNoEmpty ?? false,
-                  );
+            onPressed: () async {
+              final loginService = LoginService(ProductNetworkManager.base());
+              _users = await loginService.users();
+              setState(() {});
             },
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _users.length,
+              itemBuilder: (context, index) {
+                final user = _users[index];
+                return ListTile(
+                  title: Text(user.userId.toString()),
+                  subtitle: Text(_users[index].body.toString()),
+                );
+              },
+            ),
           ),
           Text(
             'cengizhan',
@@ -94,9 +96,9 @@ class _HomeViewState extends State<HomeView> {
 
 void calcuateUser(List<String?> items) {}
 
-class User {
-  User({required this.name, required this.money});
+// class User {
+//   User({required this.name, required this.money});
 
-  final String? name;
-  final double? money;
-}
+//   final String? name;
+//   final double? money;
+// }
