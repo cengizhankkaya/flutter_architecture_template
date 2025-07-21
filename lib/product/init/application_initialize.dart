@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:architecture_template/product/init/config/app_enviroment.dart';
+import 'package:architecture_template/product/state/container/product_state_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_logger/easy_logger.dart';
@@ -43,5 +44,6 @@ final class ApplicationInitialize {
     };
 
     AppEnvironment.general();
+    ProductContainer.setup();
   }
 }

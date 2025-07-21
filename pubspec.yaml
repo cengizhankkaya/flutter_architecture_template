@@ -24,7 +24,7 @@ dependencies:
   vexana: ^5.0.3
 
   #State Management
-  flutter_riverpod: ^2.6.1
+  flutter_bloc: ^9.1.1
 
   #Config
   easy_localization: ^3.0.7+1
